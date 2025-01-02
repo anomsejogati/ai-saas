@@ -1,5 +1,35 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Installation
+
+npm install --force
+
+## Prepare ENV
+
+https://clerk.com/
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+
+https://cloudinary.com/
+CLOUDINARY_API_KEY=
+CLOUDINARY_API_SECRET=
+CLOUDINARY_CLOUD_NAME=
+
+https://www.mongodb.com/
+MONGODB_USER=
+MONGODB_PASSWORD=
+MONGODB=
+
+https://developer.paypal.com/
+NEXT_PUBLIC_PAYPAL_CLIENT_ID=
+NEXT_PAYPAL_SECRET=
+
+https://gemini.google.com/
+GEMINI_API_KEY=
+
+https://openai.com/
+OPENAI_API_KEY=
+
 ## Getting Started
 
 First, run the development server:

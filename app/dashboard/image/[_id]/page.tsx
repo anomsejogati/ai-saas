@@ -1,7 +1,7 @@
+import { getImageFromDB } from "@/actions/image";
 import React from "react";
 import Image from "next/image";
 import ImageEditButton from "@/components/image/image-edit-button";
-import { getImageFromDB } from "@/actions/image";
 
 interface ImageProps {
   params: {
