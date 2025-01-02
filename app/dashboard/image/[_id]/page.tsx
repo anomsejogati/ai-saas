@@ -10,7 +10,7 @@ interface ImageProps {
 }
 
 export default async function ImagePage({ params }: ImageProps) {
-  const image = await getImageFromDB(params._id);
+  const image = await getImageFromDB(params?._id);
 
   return (
     <div className="flex flex-col max-w-4xl mx-auto justify-center items-center p-4">
