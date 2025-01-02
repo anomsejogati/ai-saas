@@ -4,13 +4,13 @@ import Image from "next/image";
 import ImageEditButton from "@/components/image/image-edit-button";
 
 interface ImageProps {
-  params: {
-    _id: string;
-  };
+  params: Promise<{ _id: string }>;
 }
 
 export default async function ImagePage({ params }: ImageProps) {
-  const image = await getImageFromDB(params?._id);
+  const { _id } = await params;
+
+  const image = await getImageFromDB(_id);
 
   return (
     <div className="flex flex-col max-w-4xl mx-auto justify-center items-center p-4">

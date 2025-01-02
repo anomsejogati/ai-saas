@@ -4,13 +4,13 @@ import ImageCard from "@/components/cards/image-card";
 import { getImageFromDB } from "@/actions/image";
 
 interface ImagePageProps {
-  params: {
-    _id: string;
-  };
+  params: Promise<{ _id: string }>;
 }
 
 export default async function ImagePage({ params }: ImagePageProps) {
-  const image = await getImageFromDB(params._id);
+  const { _id } = await params;
+
+  const image = await getImageFromDB(_id);
 
   return (
     <div>

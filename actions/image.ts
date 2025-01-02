@@ -130,8 +130,7 @@ export const getImageFromDB = async (_id: string) => {
   try {
     await db();
 
-    const [image] = await Promise.all([Image.findById(_id)]);
-
+    const image = await Image.findById(_id);
     return JSON.parse(JSON.stringify(image));
   } catch (error: any) {
     throw new Error(error);
