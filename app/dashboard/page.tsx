@@ -6,13 +6,12 @@ import ImageCard from "@/components/cards/image-card";
 import Pagination from "@/components/nav/pagination";
 
 interface DashboardProps {
-  searchParams: { page?: number };
+  searchParams: Promise<{ page?: number }>;
 }
 
 export default async function Dashboard({ searchParams }: DashboardProps) {
-  const page = searchParams?.page
-    ? parseInt(searchParams.page as unknown as string, 10)
-    : 1;
+  const { page: initPage } = await searchParams;
+  const page = initPage ? parseInt(initPage as unknown as string, 10) : 1;
   const limit = 3;
 
   const { images, totalCount } = await getUserImagesFromDb(page, limit);
